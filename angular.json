@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "lexical-analyzer-front"
+  "defaultProject": "lexical-analyzer-front",
+  "cli": {
+    "analytics": "34930989-c83c-4e8e-8e54-88dd54ed3418"
+  }
 }
