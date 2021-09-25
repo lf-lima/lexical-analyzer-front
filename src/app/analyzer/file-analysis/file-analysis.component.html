@@ -1,0 +1,16 @@
+<p>file-analysis works!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grupo de caracteres</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let analysis of fileAnalysis">
+    <tr>
+      <td>{{analysis?.characterGroup}}</td>
+      <td>{{analysis?.type}}</td>
+    </tr>
+  </tbody>
+</table>

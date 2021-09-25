@@ -1,0 +1,7 @@
+<p>load-file works!</p>
+
+<form (ngSubmit)="receiveFile()">
+  <input type="file" name="file" (change)="onFileChange($event.target.files)">
+
+  <button type="submit">Upload</button>
+</form>

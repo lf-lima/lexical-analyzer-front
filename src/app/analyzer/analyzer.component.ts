@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { FileAnalysis } from '../shared/models/fileAnalysis'
 
 @Component({
   selector: 'app-analyzer',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core'
 })
 export class AnalyzerComponent implements OnInit {
 
+  fileAnalysis: FileAnalysis[]
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  receivedFile(fileAnalysis: FileAnalysis[]): void {
+
+    this.fileAnalysis = fileAnalysis
+  }
 }

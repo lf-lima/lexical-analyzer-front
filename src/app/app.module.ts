@@ -1,18 +1,18 @@
+import { AnalyzerModule } from './analyzer/analyzer.module'
+import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
-import { LexicalAnalyzerComponent } from './analyzer/lexical-analyzer/lexical-analyzer.component'
-import { AnalyzerComponent } from './analyzer/analyzer.component'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LexicalAnalyzerComponent,
-    AnalyzerComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AnalyzerModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
