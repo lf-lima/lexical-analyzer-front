@@ -1,5 +1,21 @@
-<form (ngSubmit)="receiveFile()">
-  <input type="file" name="file" (change)="onFileChange($event.target.files)">
+<div class="row d-flex justify-content-center mt-5">
+  <div class="col-5">
 
-  <button type="submit">Upload</button>
-</form>
+    <form (ngSubmit)="receiveFile()" class="d-flex flex-column">
+      <mat-card>
+        <mat-card-header class="d-flex justify-content-center text-center border-bottom">
+            <mat-card-title>Escolha um arquivo para ser analisado</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="pt-4 pb-2">
+          <button mat-stroked-button (click)="inputFile.click()">Escolher</button>
+          <label for="file" class="m-2">{{file ? file.name : 'Nenhum arquivo selecionado'}}</label>
+          <input hidden #inputFile type="file" name="file" (change)="onFileChange($event.target.files)">
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary">Analisar arquivo</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+
+  </div>
+</div>

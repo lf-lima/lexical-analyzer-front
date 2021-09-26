@@ -1,4 +1,13 @@
-<app-load-file (whenReceivedFile)="receivedFile($event)"></app-load-file>
+<div class="container">
+  <mat-card class="mt-4">
+    <mat-card-header class="d-flex justify-content-center text-center">
+        <mat-card-title>Analisador Léxico</mat-card-title>
+        <mat-card-subtitle>Feito em Javascript para arquivos derivados da linguagem C</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <app-load-file (whenReceivedFile)="receivedFile($event)"></app-load-file>
 
-<app-file-analysis [fileAnalysis]="fileAnalysis"></app-file-analysis>
-
+      <app-file-analysis [fileAnalysis]="fileAnalysis"></app-file-analysis>
+    </mat-card-content>
+  </mat-card>
+</div>

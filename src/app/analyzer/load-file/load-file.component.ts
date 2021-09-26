@@ -20,14 +20,18 @@ export class LoadFileComponent implements OnInit {
   }
 
   onFileChange(files: File[]): void {
-    this.file = files[0]
+    if (files[0]) {
+      this.file = files[0]
+    }
   }
 
   async receiveFile(): Promise<void> {
-    const fileText = await this.file.text()
+    if (this.file) {
+      const fileText = await this.file.text()
 
-    const fileAnalysis = analyseFile(fileText)
+      const fileAnalysis = analyseFile(fileText)
 
-    this.whenReceivedFile.emit(fileAnalysis)
+      this.whenReceivedFile.emit(fileAnalysis)
+    }
   }
 }
