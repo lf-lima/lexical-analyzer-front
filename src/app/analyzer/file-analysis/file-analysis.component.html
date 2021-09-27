@@ -1,22 +1,35 @@
 <mat-card class="mt-5">
-  <mat-card-header class="d-flex justify-content-center text-center border-bottom">
-      <mat-card-title>Análise</mat-card-title>
+  <mat-card-header class="d-flex flex-row justify-content-between text-center border-bottom">
+      <div>
+        <mat-card-title>Análise</mat-card-title>
+      </div>
+
+      <div>
+        <mat-form-field >
+          <mat-label>Buscar pelo nº da linha</mat-label>
+          <input matInput [(ngModel)]="lineNumber" (blur)="moveToLine.click()" type="text">
+          <a hidden #moveToLine [href]="'#line-' + lineNumber"></a>
+        </mat-form-field>
+      </div>
   </mat-card-header>
   <mat-card-content class="pt-4 pb-2">
-    <table *ngIf="fileAnalysis?.length">
+    <table class="table table-hover text-center" *ngIf="fileAnalysis?.length">
       <thead>
         <tr>
-          <th>Nº</th>
-          <th>Linha</th>
-          <th>Grupo de caracteres</th>
-          <th>Tipo</th>
+          <th scope="col">Nº</th>
+          <th scope="col">Linha</th>
+          <th scope="col">Grupo de caracteres</th>
+          <th scope="col">Tipo</th>
         </tr>
       </thead>
       <tbody>
         <ng-container *ngFor="let lineAnalysis of fileAnalysis; let lineAnalysisIndex = index">
+          <tr [id]="'line-'+lineAnalysisIndex">
+            <th class="align-middle" scope="row" [attr.rowspan]="lineAnalysis.analysis.length + 1">{{lineAnalysisIndex}}</th>
+            <th class="align-middle" scope="row" [attr.rowspan]="lineAnalysis.analysis.length + 1">{{lineAnalysis.line}}</th>
+          </tr>
+
           <tr *ngFor="let analysis of lineAnalysis?.analysis; let analysisIndex = index">
-            <td *ngIf="analysisIndex == 0" [attr.rowspan]="lineAnalysis.analysis.length">{{lineAnalysisIndex}}</td>
-            <td *ngIf="analysisIndex == 0" [attr.rowspan]="lineAnalysis.analysis.length">{{lineAnalysis.line}}</td>
             <td>{{analysis?.characterGroup}}</td>
             <td>{{analysis?.type}}</td>
           </tr>

@@ -13,6 +13,8 @@ export class FileAnalysisComponent implements OnInit {
   @Input()
   fileAnalysis: FileAnalysis[] = []
 
+  lineNumber: string
+
   ngOnInit(): void {
   }
 }
