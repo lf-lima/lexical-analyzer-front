@@ -21,7 +21,13 @@ export class LoadFileComponent implements OnInit {
 
   onFileChange(files: File[]): void {
     if (files[0]) {
-      this.file = files[0]
+      const file = files[0]
+
+      const [, fileExtension ] = file.name.split('.')
+
+      if (fileExtension === 'cpp' || fileExtension === 'c') {
+        this.file = files[0]
+      }
     }
   }
 

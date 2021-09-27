@@ -13,7 +13,7 @@ export class FileAnalysisComponent implements OnInit {
   @Input()
   fileAnalysis: FileAnalysis[] = []
 
-  lineNumber: string
+  lineNumber: number
 
   ngOnInit(): void {
   }

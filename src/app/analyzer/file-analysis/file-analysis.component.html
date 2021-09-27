@@ -24,8 +24,8 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let lineAnalysis of fileAnalysis; let lineAnalysisIndex = index">
-          <tr [id]="'line-'+lineAnalysisIndex">
-            <th class="align-middle" scope="row" [attr.rowspan]="lineAnalysis.analysis.length + 1">{{lineAnalysisIndex}}</th>
+          <tr [id]="'line-' + (lineAnalysisIndex + 1)">
+            <th class="align-middle" scope="row" [attr.rowspan]="lineAnalysis.analysis.length + 1">{{lineAnalysisIndex + 1}}</th>
             <th class="align-middle" scope="row" [attr.rowspan]="lineAnalysis.analysis.length + 1">{{lineAnalysis.line}}</th>
           </tr>
 

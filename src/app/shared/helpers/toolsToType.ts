@@ -52,7 +52,7 @@ export const toolsToType = [
     color: 'green'
   },
   {
-    expression: /^\/\/.*/,
+    expression: /^\/\/.*$/,
     type: 'Comentário',
     color: 'grey'
   }
